@@ -19,7 +19,7 @@ let weatherData = {
     temperature: 67,
     conditions: "sunny"
   },
-  forecast: [
+  forecast: [nip
     { temperature: 65, conditions: "Mostly Cloudy" },
     { temperature: 70, conditions: "Partly Cloudy" }
   ]
@@ -30,3 +30,18 @@ let day2 = weatherData.forecast[1];
 
 console.log("Currently it is " + weatherData.current.temperature+ " degrees and "+ weatherData.current.conditions+". Tomorrow it wil be "+ day1.temperature+ " and "+day1.conditions+".");;
 console.log("The next day we will see " + day2.conditions+ " skies, with a temperature of "+day2.temperature+"." );
+
+
+//another way to do this
+
+let currentTemperature = weatherData.current.currentTemperature
+let currentConditions = weatherData.current.conditions.toLowerCase()
+
+let tomorrowTemp = weatherData.forecast[0].temperature
+let tomorrowConditions = weatherData.forecast[0].currentConditions
+let nextDayConditions = weatherData.forecast[1].condition.toLowerCase()
+let nextDayTemperature = weatherData.forecast[1].temperature
+
+console.log("Currently it is " + currentTemperature + "degrees and "+ currentConditions + ".")
+console.log("Tomorrow it will be" + tomorrowTemp+ "and" + tomorrowConditions + ".")
+console.log("The next day it will be" + nextDayConditions +"and " + nextDayTemperature + ".")
